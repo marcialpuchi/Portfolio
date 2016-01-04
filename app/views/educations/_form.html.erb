@@ -1,0 +1,35 @@
+<%= form_for @education do |f| %>
+  <p>
+    <%= f.label :institution %><br>
+    <%= f.text_field :institution %>
+  </p>
+
+  <p>
+    <%= f.label :degree %><br>
+    <%= f.text_field :degree %>
+  </p>
+
+  <p>
+    <%= f.label :start %><br>
+    <%= f.text_field :start %>
+  </p>
+
+  <p>
+    <%= f.label :end %><br>
+    <%= f.text_field :end %>
+  </p>
+
+  <p>
+    <%= f.label :short_description %><br>
+    <%= f.text_area :short_description %>
+  </p>
+ 
+  <p>
+    <%= f.label :full_description %><br>
+    <%= f.text_area :full_description %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

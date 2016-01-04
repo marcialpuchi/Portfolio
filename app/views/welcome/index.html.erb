@@ -1,0 +1,24 @@
+<header>
+	<a class="logo">Marcial Puchi</a>
+	<ul class="nav">
+		<li>About Me</li>
+		<li>Experience</li>
+		<li>Education</li>
+		<li>Awards</li>
+		<li>Contact</li>
+	</ul>
+</header>
+<div id="about">About</div>
+<div id="exp">Experience</div>
+<div id="edu">Education
+	<ul class="education">
+		<% @education.each do |edu|%>
+			<li>
+				<h2> <%= edu.institution %></h2> <br>
+				<h3> <%= edu.degree %></h3>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div id="awards">Awards</div>
+<div id="contact">Contact</div>

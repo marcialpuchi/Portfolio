@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160104021207) do
+ActiveRecord::Schema.define(version: 20160104065441) do
+
+  create_table "awards", force: :cascade do |t|
+    t.string   "title"
+    t.string   "location"
+    t.date     "award_date"
+    t.string   "short_description"
+    t.text     "full_description"
+    t.string   "website"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "educations", force: :cascade do |t|
     t.string   "institution"
@@ -31,6 +42,17 @@ ActiveRecord::Schema.define(version: 20160104021207) do
     t.date     "end"
     t.string   "short_description"
     t.text     "full_description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "publications", force: :cascade do |t|
+    t.string   "title"
+    t.string   "location"
+    t.date     "publication_date"
+    t.string   "short_description"
+    t.text     "full_description"
+    t.string   "website"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

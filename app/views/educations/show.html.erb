@@ -1,0 +1,10 @@
+<%= @education.institution %> <br>
+<%= @education.degree %> <br>
+<%= @education.start %> - <%= @education.end %> <br>
+<%= @education.full_description %>
+
+<br>
+<br>
+
+<%= link_to "Edit", edit_education_path(@education) %>
+<%= link_to "Delete", education_path(@education), method: :delete %>
