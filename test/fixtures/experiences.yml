@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  location: MyString
+  start: 2016-01-03
+  end: 2016-01-03
+  short_description: MyString
+  full_description: MyText
+
+two:
+  company: MyString
+  location: MyString
+  start: 2016-01-03
+  end: 2016-01-03
+  short_description: MyString
+  full_description: MyText
