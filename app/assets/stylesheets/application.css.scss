@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+@import 'font-awesome';
+@import '_normalize';
+@import '_variables';
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,500,700);
+
+ .wrapper{
+ 	width: 80%;
+ 	margin: 0 auto;
+ }
+
+ .wrapper_wide{
+ 	width: 90%;
+ 	margin: 0 auto;
+ }
+
+ .wrapper_skinny{
+ 	width: 60%;
+ 	margin: 0 auto;
+ }
+
+.cf:before, .cf:after{
+	content: " ";
+	display: table;
+}
+
+.cf:after{
+	clear:both;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	color: $b;
+}
+
+
