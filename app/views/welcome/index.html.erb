@@ -27,14 +27,81 @@
 		<div class="profile-pic"></div>
 		<h1>About me</h1>
 		<p>Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.</p>
+
 		<p>Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.</p>
+
+		<!-- <br>
+		<hr>
+		<br>
+
+		<h2>Skillset</h2>
+		<ul class="skillset">
+			<li>Javascript</li>
+			<li>Python</li>
+			<li>Java</li>
+			<li>Agile/SCRUM</li>
+			<li>HTML5</li>
+			<li>Data Visialisation</li>
+		</ul> -->
 	</div>
 </section>
 
 <section id="exp">
-	<div class="wrapper">
+	<div class="">
 		<h1>Experience</h1>
-		<div class="timeline"></div>
+		<div id="cd-timeline" class="cd-container">
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img">
+					<img src="assets/HP.svg" alt="Hewlett-Packard" class="hp">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h2>Advanced Prototyper / Research Assistant</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+					<a href="#0" class="cd-read-more">Read more</a>
+					<span class="cd-date">Jan 18</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-picture">
+					<img src="assets/ucol.png" alt="University of Colima" class="ucol">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h2>Software Developer (Internship)</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis.</p>
+					<a href="#0" class="cd-read-more">Read more</a>
+					<span class="cd-date">Jan 24</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-location">
+					<img src="assets/otago.svg" alt="University of Otago" class="otago">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h2>Title of section 4</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+					<a href="#0" class="cd-read-more">Read more</a>
+					<span class="cd-date">Feb 14</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+
+			<div class="cd-timeline-block">
+				<div class="cd-timeline-img cd-location">
+					<img src="assets/ucol.png" alt="University of Colima" class="ucol">
+				</div> <!-- cd-timeline-img -->
+
+				<div class="cd-timeline-content">
+					<h2>Title of section 5</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+					<a href="#0" class="cd-read-more">Read more</a>
+					<span class="cd-date">Feb 18</span>
+				</div> <!-- cd-timeline-content -->
+			</div> <!-- cd-timeline-block -->
+		</div> <!-- cd-timeline -->
 	</div>
 </section>
 
@@ -69,4 +136,24 @@
         cell_size:140
     });
     $("#landing").prepend(pattern.canvas())
+
+    $(document).ready(function($){
+		var $timeline_block = $('.cd-timeline-block');
+
+		//hide timeline blocks which are outside the viewport
+		$timeline_block.each(function(){
+			if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+				$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+			}
+		});
+
+		//on scolling, show/animate timeline blocks when enter the viewport
+		$(window).on('scroll', function(){
+			$timeline_block.each(function(){
+				if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+				}
+			});
+		});
+	});
 </script>
