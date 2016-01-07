@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-  	@education = Education.all.order("end DESC")
+  	@education = Education.all.order("start ASC")
   end
 end

@@ -30,19 +30,6 @@
 
 		<p>Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs’ years follow me 12 inches of parchment. Head Boy start-of-term banquet Cleansweep Seven roaring lion hat. Unicorn blood crossbow mars is bright tonight, feast Norwegian Ridgeback. Come seek us where our voices sound, we cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.</p>
 
-		<!-- <br>
-		<hr>
-		<br>
-
-		<h2>Skillset</h2>
-		<ul class="skillset">
-			<li>Javascript</li>
-			<li>Python</li>
-			<li>Java</li>
-			<li>Agile/SCRUM</li>
-			<li>HTML5</li>
-			<li>Data Visialisation</li>
-		</ul> -->
 	</div>
 </section>
 
@@ -82,7 +69,7 @@
 				</div> <!-- cd-timeline-img -->
 
 				<div class="cd-timeline-content">
-					<h2>Title of section 4</h2>
+					<h2>Web Developer (Course Project)</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
 					<a href="#0" class="cd-read-more">Read more</a>
 					<span class="cd-date">Feb 14</span>
@@ -95,7 +82,7 @@
 				</div> <!-- cd-timeline-img -->
 
 				<div class="cd-timeline-content">
-					<h2>Title of section 5</h2>
+					<h2>Software Developer (Internship)</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
 					<a href="#0" class="cd-read-more">Read more</a>
 					<span class="cd-date">Feb 18</span>
@@ -107,11 +94,17 @@
 
 <section id="edu">
 	<h1>Education</h1>
-	<ul class="education">
+	<ul class="education timeline" id="timeline">
 		<% @education.each do |edu|%>
-			<li>
-				<h2> <%= edu.institution %></h2> <br>
-				<h3> <%= edu.degree %></h3>
+			<li class="li complete">
+				<div class="timestamp">
+			     	<span class="author"><%= edu.institution %></span>
+			     	<span class="date"><%= edu.start.strftime("%B %Y") %> - <%= edu.end.strftime("%B %Y") %><span>
+			    </div>
+			    <div class="status">
+			     	<h4><%= edu.degree %></h4>
+			     	<span class="logo"></span>
+			    </div>
 			</li>
 		<% end %>
 	</ul>
@@ -128,32 +121,3 @@
 	</div></section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
-<script>
-    var pattern = Trianglify({
-        width: window.innerWidth,
-        height: window.innerHeight,
-        x_colors: 'Reds',
-        cell_size:140
-    });
-    $("#landing").prepend(pattern.canvas())
-
-    $(document).ready(function($){
-		var $timeline_block = $('.cd-timeline-block');
-
-		//hide timeline blocks which are outside the viewport
-		$timeline_block.each(function(){
-			if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
-				$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
-			}
-		});
-
-		//on scolling, show/animate timeline blocks when enter the viewport
-		$(window).on('scroll', function(){
-			$timeline_block.each(function(){
-				if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
-					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-				}
-			});
-		});
-	});
-</script>

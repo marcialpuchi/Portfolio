@@ -1,5 +1,6 @@
 @import '_variables';
 @import '_timeline';
+@import 'bourbon';
 
 section{
 	text-align: center;
@@ -98,4 +99,10 @@ section{
 
 #exp{
 	background-color: $w;
+}
+
+#edu{
+	background-color: $g;
+	color: $w;
+	@import '_timeline-horizontal';
 }
